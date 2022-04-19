@@ -18,6 +18,10 @@ function App() {
     dispatch({type: 'DEC'});
   };
 
+  const addition = () => {
+    dispatch({type: 'ADD', payload: 10});
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -34,6 +38,10 @@ function App() {
         </button>
 
         <button type="button" onClick={decrement}>
+          -
+        </button>
+
+        <button type="button" onClick={addition}>
           -
         </button>
 

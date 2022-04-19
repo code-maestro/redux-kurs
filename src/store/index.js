@@ -16,6 +16,12 @@ const reducerMethod = (state = { counter: 10 }, action) => {
         };
     }
 
+    if (action.type === 'ADD') {
+        return {
+            counter: state.counter - 1
+        };
+    }
+
     return state;
 }
 
