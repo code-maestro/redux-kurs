@@ -1,7 +1,7 @@
-import { createStore } from 'redux';
+import { configureStore } from 'redux';
 
 const reducerMethod = ( state={ counter: 0}, action ) => {
 
 }
 
-const store = createStore(reducerMethod);
+const store = configureStore(reducerMethod);
