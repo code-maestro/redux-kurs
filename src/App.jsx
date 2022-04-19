@@ -1,21 +1,45 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import "./App.css";
 
 function App() {
+  // const [count, setCount] = useState(0)
 
-  const [count, setCount] = useState(0)
+  const counter = useSelector((state) => state.counter);
+
+  const dispatch = useDispatch();
+
+  const increment = () => {
+    dispatch({type: 'INC'});
+  };
+
+  const decrement = () => {
+    dispatch({type: 'DEC'});
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        {/* <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
+            count is: {counter}
           </button>
-        </p>
+        </p> */}
+
+        <p>count is: {counter}</p>
+
+        <button type="button" onClick={increment}>
+          +
+        </button>
+
+        <button type="button" onClick={decrement}>
+          -
+        </button>
+
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
