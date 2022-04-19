@@ -1,21 +1,38 @@
-import { useState } from 'react'
-import './App.css'
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "./store";
+
+import "./App.css";
 
 function App() {
+  const counter = useSelector((state) => state.counter);
 
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+
+  const adding = () => {
+    dispatch(actions.increment());
+  };
+
+  const subtracting = () => {
+    dispatch(actions.decrement());
+  };
+
+  const addingBy = () => {
+    dispatch(actions.addBy(10));
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
+        <p>count is: {counter}</p>
+
+        <button type="button" onClick={adding}> + </button>
+
+        <button type="button" onClick={subtracting}> - </button>
+
+        <button type="button" onClick={addingBy}> ++ </button>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
