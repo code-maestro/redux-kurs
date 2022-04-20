@@ -1,37 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
-import { actions } from "./store";
+import { useSelector } from "react-redux";
 
 import "./App.css";
+import Login from "./components/Login";
+import Home from "./components/Home";
 
 function App() {
-  const counter = useSelector((state) => state.counter);
-
-  const dispatch = useDispatch();
-
-  const adding = () => {
-    dispatch(actions.increment());
-  };
-
-  const subtracting = () => {
-    dispatch(actions.decrement());
-  };
-
-  const addingBy = () => {
-    dispatch(actions.addBy(10));
-  };
-
+  const authState = useSelector((state) => state.auth.isLoggedIn);
+  console.log(authState);
   return (
     <div className="App">
-      <header className="App-header">
-        <p>count is: {counter}</p>
-
-        <button type="button" onClick={adding}> + </button>
-
-        <button type="button" onClick={subtracting}> - </button>
-
-        <button type="button" onClick={addingBy}> ++ </button>
-      </header>
-    </div>
+        { !authState && <Login/>}
+        { authState && <Home/>}
+    </div> 
   );
 }
 

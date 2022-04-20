@@ -1,0 +1,108 @@
+  .modal {
+    background-color: rgb(255, 255, 255);
+    border-radius: 28px;
+    box-shadow: rgb(0 0 0 / 14%) 0px 5px 15px 0px;
+    min-height: 78px;
+    margin: 0px auto;
+    text-align: center;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 465px;
+  }
+  
+  .modal_txt {
+    margin-bottom: 20px;
+    color: rgb(36, 37, 38);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .modal_content {
+    display: flex;
+    flex-direction: column;
+    color: rgb(36, 37, 38);
+    margin-top: 28px;
+  }
+  
+  .modal_cart_details {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    /* align-items: center; */
+  }
+  
+  .cart_summary {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 100px;
+    font-size: 12px;
+    padding: 0 1rem;
+    margin: .5rem 0;
+    border: 1px solid rgb(223, 230, 235);
+    color: rgb(79, 93, 104);
+  }
+  
+  .buttons button {
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    border-radius: 27.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    appearance: none;
+    outline: none;
+    padding: 0.6rem;
+    font-size: 13px;
+    line-height: 15px;
+    height: 40px;
+  }
+  
+  .keep_btn {
+    border: 2px solid rgb(21, 63, 102);
+    color: rgb(21, 63, 102);
+    background: rgb(255, 255, 255);
+  }
+  
+  @media screen and (max-width: 400px) {
+    .modal {
+      width: 80%;
+    }
+    
+  .cart_summary {
+    border-radius: .4rem;
+    padding: 0px 10px;
+    height: max-content;
+  }
+  
+  .cart_summary svg {
+    display: none;
+  }
+  
+  .cart_summary span {
+    font-size: 15px;
+  }
+  
+  .cart_summary span:last-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .cart_summary span,
+  .cart_summary button {
+    padding: .5rem 0;
+  }
+  
+    .buttons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
